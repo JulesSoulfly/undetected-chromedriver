@@ -115,6 +115,7 @@ class Chrome(selenium.webdriver.chrome.webdriver.WebDriver):
         suppress_welcome=True,
         use_subprocess=False,
         debug=False,
+        executable_path=None,
         **kw
     ):
         """
@@ -205,7 +206,7 @@ class Chrome(selenium.webdriver.chrome.webdriver.WebDriver):
         """
         self.debug = debug
         patcher = Patcher(
-            executable_path=None,
+            executable_path=executable_path,
             force=patcher_force_close,
             version_main=version_main,
         )
